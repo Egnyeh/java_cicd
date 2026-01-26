@@ -8,25 +8,25 @@ public class DiscountCalculatorTest {
     @Test
     public void testStudentDiscount(){
         double result = DiscountCalculator.calculate(100.0, true);
-        assertEquals(80.0, result, 0.01, "El descuento de estudiante debe ser del 20%");
+        assertEquals(80.0, result, 0.001);
     }
 
     @Test
     public void testNonStudentDiscount() {
         double result = DiscountCalculator.calculate(100.0, false);
-        assertEquals(95.0, result, 0.01, "El descuento de no estudiante debe ser del 5%");
+        assertEquals(95.0, result, 0.001);
     }
     
     @Test
     public void testStudentDiscountWithDifferentPrice() {
-        double result = DiscountCalculator.calculate(50.0, true);
-        assertEquals(40.0, result, 0.01);
+        double result = DiscountCalculator.calculate(0.0, true);
+        assertEquals(0.0, result, 0.001);
     }
     
     @Test
     public void testNonStudentDiscountWithDifferentPrice() {
-        double result = DiscountCalculator.calculate(200.0, false);
-        assertEquals(190.0, result, 0.01);
+        double result = DiscountCalculator.calculate(-50.0, false);
+        assertEquals(-50.0, result, 0.001);
     }
 
 }
